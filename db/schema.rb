@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_012216) do
     t.string "name"
     t.string "genre"
     t.string "members"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_012216) do
     t.string "username"
     t.string "password_digest"
     t.string "bio"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_012216) do
   create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

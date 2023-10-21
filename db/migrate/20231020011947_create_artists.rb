@@ -4,6 +4,7 @@ class CreateArtists < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :genre
       t.string :members
+      t.string :image 
 
       t.timestamps
     end

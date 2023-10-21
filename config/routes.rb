@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  resources :shows 
+  resources :venues, only: [:index, :show, :create]
+  resources :artists, only: [:index, :show]
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

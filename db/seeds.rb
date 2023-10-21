@@ -1,8 +1,8 @@
 puts "seeding..."
 
-art = User.create(username: "Art", password: "gobuffalo")
-anne = User.create(username: "Anne", password: "gardenlove")
-chuck = User.create(username: "Chuck", password: "wilhelt")
+art = User.create(username: "Art", type: "Goer", password: "gobuffalo")
+anne = User.create(username: "Anne", type: "Goer", password: "gardenlove")
+chuck = User.create(username: "Chuck", type: "Promoter", password: "wilhelt")
 
 boris = Artist.create(name: "Boris", genre: "Sludge Metal", members: "Atsuo, Takeshi, Wata")
 melvins = Artist.create(name: "The Melvins", genre: "Metal", members: "Buzz Osbourne, Dale Crover, Steve McDonald")
