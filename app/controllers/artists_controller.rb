@@ -9,4 +9,5 @@ class ArtistsController < ApplicationController
         artist = Artist.find_by(id: params[:id])
         render json: artist 
     end
+    
 end
