@@ -1,17 +1,22 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { Route, Routes } from 'react-router-dom';
+import { UserProvider } from "./contexts/user";
+import LoginForm from "./components/LoginForm";
+import SignUpForm from "./components/SignUpForm";
+import NavBar from "./components/NavBar";
+
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
-
+  
   return (
     <div className="App">
-      <h1>Page Count: {count}</h1>
+    <UserProvider>
+      <NavBar/>
+      <Routes>
+        <Route exact path="/signup" element={<SignUpForm/>}/>
+        <Route exact path="/login" element={<LoginForm/>}/>
+      </Routes>
+    </UserProvider>
     </div>
   );
 }
