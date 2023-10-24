@@ -22,11 +22,15 @@ function SignUpForm() {
         username: username,
         password: password,
         password_confirmation: passwordConfirmation,
+        bio: bio,
+        type: type 
       }),
     }).then((r) => {
       setUsername("")
       setPassword("")
       setPasswordConfirmation("")
+      setBio("")
+      setType("")
         if (r.ok) {
           r.json().then((user) => onSignUp(user));
         } else {
