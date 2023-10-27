@@ -3,14 +3,13 @@ import { VenuesContext } from '../contexts/venues';
 
 
 function VenuesPage() {
-    const { venues, setVenues } = useContext(VenuesContext)
-
-
+    const { venues } = useContext(VenuesContext)
+    
     return (
         <>
         {venues.map((venue) => (
-            <VenueCard key={venue.id} venue={venue}/>
-        ))}
+                <VenueCard key={venue.id} venue={venue}/>
+            ))}
         </>
     )
 }
