@@ -13,11 +13,11 @@ tool = Artist.create(name: "Tool", genre: "Progressive Rock", members: "Maynard 
 elder = Artist.create(name: "Elder", genre: "Progressive Metal", members: "Nick DeSalvo, Mike Risberg, Jack Donovan, Georg Edert")
 das_racist = Artist.create(name: "Das Racist", genre: "Hip-Hop", members: "Kool A.D., Himanshu")
 
-empire_live = Venue.create(name: "Empire Live", location: "93 N Pearl St")
-proctors = Venue.create(name: "Proctor's Theatre", location: "432 State St")
-the_palace = Venue.create(name: "Palace Theatre", location: "1564 Broadway")
-the_egg = Venue.create(name: "The Egg", location: "Empire State Plaza")
-upstate_concert_hall = Venue.create(name: "Upstate Concert Hall", location: "1208 Route 146")
+empire_live = Venue.create(name: "Empire Live", location: "93 N Pearl St", image:"https://s.hdnux.com/photos/01/21/50/52/21400248/6/1200x0.jpg")
+proctors = Venue.create(name: "Proctor's Theatre", location: "432 State St", image:"https://www.newyorkbyrail.com/wp-content/uploads/2017/07/proctors-theatre.jpg")
+the_palace = Venue.create(name: "Palace Theatre", location: "1564 Broadway", image:"http://upload.wikimedia.org/wikipedia/commons/4/48/PalaceTheater.JPG")
+the_egg = Venue.create(name: "The Egg", location: "Empire State Plaza", image:"http://www.rogerhodgson.com/documents/theegg2.jpg")
+upstate_concert_hall = Venue.create(name: "Upstate Concert Hall", location: "1208 Route 146", image:"https://i.ytimg.com/vi/YZoRLQNzGHk/maxresdefault.jpg")
 
 show_1 = Show.create(title: "Twins of Evil", rating: 4, date: "9/30", artist_id: melvins.id, venue_id: empire_live.id)
 show_2 = Show.create(title:"Beasts of the East", rating: 5, date: "9/31", artist_id: boris.id, venue_id: empire_live.id)
