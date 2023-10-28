@@ -9,7 +9,7 @@ function ArtistsProvider({ children }) {
         fetch("/artists")
         .then((r) => r.json())
         .then((data) => setArtists(data))
-    })
+    }, [])
 
     return (
         <ArtistsContext.Provider value={{ artists, setArtists}}>

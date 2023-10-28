@@ -31,7 +31,11 @@ function NavBar() {
             <h1 id="user_name_text">{`Hello ${user.username}`}</h1>
             <br/>
             <button style={linkStyles} onClick={logout}>Logout</button>
-           
+            <NavLink to="/venues"
+                style={linkStyles}
+            >
+                Venues List 
+            </NavLink>
             </>
         )
     }else{

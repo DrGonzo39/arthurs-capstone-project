@@ -9,7 +9,7 @@ function VenuesProvider({ children }) {
         fetch("/venues")
         .then((r) => r.json())
         .then((data) => setVenues(data))
-    })
+    }, [])
 
     return (
         <VenuesContext.Provider value={{ venues, setVenues }}>

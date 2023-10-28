@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { VenuesContext } from "../contexts/venues";
-import { UserContext } from "../contexts/user";
+import { VenuesContext } from "../contexts/venues"
+import ShowCard from "./ShowCard";
 
 
 function VenueCard({ venue }) {
@@ -9,8 +9,7 @@ function VenueCard({ venue }) {
     const [date, setDate] = useState("")
     const [errors, setErrors] = useState([])
     const { venues } = useContext(VenuesContext);
-    const { user } = useContext(UserContext);
-
+    
 
     return (
         <div id="venue_card">
@@ -18,7 +17,7 @@ function VenueCard({ venue }) {
             <h1 id="venue_name">{venue.name}</h1>
             <h2 id="venue_location">{venue.location}</h2>
             <h3 id="upcoming_shows">Coming Soon at this Venue!</h3>
-            <form onSubmit={handleSubmit}>
+            <form >
             <input 
             type="text"
             id="title"
@@ -37,19 +36,12 @@ function VenueCard({ venue }) {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             />
-            <button id="new_show_button" type="submit"></button>
+            <button id="new_show_button" type="submit">Add your show!</button>
             </form>
             <h4>
-                {venue.shows.map((show) => {
-                    if (user.type === 'Promoter'){
-                        return <ShowCard key={show.id} show={show}/>
-                    }else{
-                        return <>
-                            <h1>{show.title}</h1>
-                            <p>{show.date}</p>
-                        </>
-                    }
-                })}
+                {venue.shows.map((show) => (
+                    <ShowCard key={show.id} show={show}/>
+                ))}
             </h4>
             <ul>
              {errors.map((err) => (

@@ -19,3 +19,5 @@ function ShowCard({ show }) {
         </div>
     )
 }
+
+export default ShowCard;
