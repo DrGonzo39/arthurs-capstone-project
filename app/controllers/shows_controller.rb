@@ -6,7 +6,7 @@ class ShowsController < ApplicationController
     end
 
     def create 
-        venue = Venue.find_by(id: params[:id])
+        venue = Venue.find_by(id: params[:venue_id])
         show = venue.shows.create!(show_params)
         render json: show, status: :created
     end
@@ -28,6 +28,6 @@ class ShowsController < ApplicationController
     private
 
     def show_params
-        params.permit(:title, :rating, :date, :artist)
+        params.permit(:title, :rating, :date, :artist_id, :venue_id)
     end
 end

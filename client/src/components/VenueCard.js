@@ -8,9 +8,13 @@ function VenueCard({ venue }) {
     const [title, setTitle] = useState("")
     const [rating, setRating] = useState(0)
     const [date, setDate] = useState("")
+    const [artistId, setArtistId] = useState(0)
     const [errors, setErrors] = useState([])
     const { venues, setVenues } = useContext(VenuesContext);
     const { artists, setArtists } = useContext(ArtistsContext);
+    console.log(artistId)
+    console.log(venues)
+    console.log(artists)
 
     function onAddShow(newShow) {
         const artistToUpdate = artists.find((artist) => artist.id === newShow.artist_id)
@@ -44,6 +48,7 @@ function VenueCard({ venue }) {
             "Content-type": "application/json"
            },
            body: JSON.stringify({
+            artist_id: artistId,
             venue_id: venue.id,
             title: title,
             rating: rating,
@@ -87,6 +92,12 @@ function VenueCard({ venue }) {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             />
+            <select onChange={(e) => setArtistId(e.target.value)} name="artists" id="artists_select">
+                <option>Choose an artist</option>
+                {artists.map((artist) => (
+                    <option value={artist.id}>{artist.name}</option>
+                ))}
+            </select>
             <button id="new_show_button" type="submit">Add your show!</button>
             </form>
             <h4>

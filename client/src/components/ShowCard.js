@@ -8,7 +8,7 @@ function ShowCard({ show }) {
     return (
         <div>
         <h1>{show.title}</h1>
-        <h2>Starring: {show.artist}</h2>
+        <h2>Featuring: {show.artist.name}</h2>
           <form id="show_info">
             <p>Date:</p>
             <input 
