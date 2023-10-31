@@ -12,14 +12,14 @@ class ShowsController < ApplicationController
     end
 
     def update
-        venue = Venue.find_by(id: params[:id])
+        venue = Venue.find_by(id: params[:venue_id])
         show = venue.shows.find_by(id: params[:id])
         show.update!(show_params)
         render json: show 
     end
 
     def destroy
-        venue = Venue.find_by(id: params[:id])
+        venue = Venue.find_by(id: params[:venue_id])
         show = venue.shows.find_by(id: params[:id])
         show.destroy
         head :no_content 

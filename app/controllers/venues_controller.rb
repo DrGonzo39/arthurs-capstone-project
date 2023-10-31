@@ -11,14 +11,4 @@ class VenuesController < ApplicationController
         render json: venue
     end
 
-    def create
-        venue = Venue.create!(venue_params)
-        render json: venue, status: :created 
-    end
-
-    private
-
-    def venue_params
-        params.permit(:name, :location)
-    end
 end
