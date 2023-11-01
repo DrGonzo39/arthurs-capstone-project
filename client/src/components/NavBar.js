@@ -37,6 +37,11 @@ function NavBar() {
             >
                 Venues List 
             </NavLink>
+            <NavLink to="/artists"
+                style={linkStyles}
+            >
+                Artist Profiles 
+            </NavLink>
             </>
         )
     }else{

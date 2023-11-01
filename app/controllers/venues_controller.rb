@@ -1,5 +1,4 @@
-class VenuesController < ApplicationController
-    skip_before_action :authorize, only: :create 
+class VenuesController < ApplicationController 
 
     def index 
         venues = Venue.all

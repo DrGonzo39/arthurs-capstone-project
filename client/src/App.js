@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import { VenuesProvider } from "./contexts/venues";
 import { ArtistsProvider } from "./contexts/artists";
 import VenuesPage from "./components/VenuesPage";
+import ArtistsPage from "./components/ArtistsPage";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/signup" element={<SignUpForm/>}/>
         <Route exact path="/login" element={<LoginForm/>}/>
         <Route exact path="/venues" element={<VenuesPage/>}/>
+        <Route exact path="/artists" element={<ArtistsPage/>}/>
       </Routes>
     </UserProvider>
     </VenuesProvider>

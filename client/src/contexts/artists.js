@@ -11,8 +11,12 @@ function ArtistsProvider({ children }) {
         .then((data) => setArtists(data))
     }, [])
 
+    function onAddArtist(newArtist) {
+        setArtists([...artists, newArtist])
+    }
+
     return (
-        <ArtistsContext.Provider value={{ artists, setArtists}}>
+        <ArtistsContext.Provider value={{ artists, setArtists, onAddArtist}}>
             { children } 
         </ArtistsContext.Provider>
     )
