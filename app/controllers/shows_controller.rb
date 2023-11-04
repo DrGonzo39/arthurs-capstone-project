@@ -19,8 +19,7 @@ class ShowsController < ApplicationController
     end
 
     def destroy
-        venue = Venue.find_by(id: params[:venue_id])
-        show = venue.shows.find_by(id: params[:id])
+        show = Show.find_by(id: params[:id])
         show.destroy
         head :no_content 
     end
