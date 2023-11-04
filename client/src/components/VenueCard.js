@@ -12,9 +12,7 @@ function VenueCard({ venue }) {
     const [errors, setErrors] = useState([])
     const { venues, setVenues } = useContext(VenuesContext);
     const { artists, setArtists } = useContext(ArtistsContext);
-    console.log(artistId)
-    console.log(venues)
-    console.log(artists)
+   
 
     function onAddShow(newShow) {
         const artistToUpdate = artists.find((artist) => artist.id === newShow.artist_id)

@@ -32,7 +32,7 @@ function ShowCard({ show }) {
 
     function onUpdateShow(updatedShow) {
         const artistToUpdate = artists.find((artist) => artist.id === updatedShow.artist_id)
-        const updatedArtistShows = artistToUpdate.shows.filter((show) => {
+        const updatedArtistShows = artistToUpdate.shows.map((show) => {
             if (show.id === updatedShow.id) {
                 return updatedShow
             }else{
@@ -42,7 +42,7 @@ function ShowCard({ show }) {
         const updatedArtist = {...artistToUpdate, shows: updatedArtistShows }
        handleUpdateArtists(updatedArtist);
         const venueToupdate = venues.find((venue) => venue.id === updatedShow.venue_id)
-        const updatedVenueShows = venueToupdate.shows.filter((show) => {
+        const updatedVenueShows = venueToupdate.shows.map((show) => {
             if (show.id === updatedShow.id) {
                 return updatedShow
             }else{
@@ -56,8 +56,8 @@ function ShowCard({ show }) {
     function handleDeleteClick() {
         fetch(`/shows/${show.id}`, {
             method: "DELETE"
-        });
-        onDeleteShow(show);
+        })
+        .then(() => onDeleteShow(show));
     }
 
     function onDeleteShow(show) {
@@ -66,7 +66,7 @@ function ShowCard({ show }) {
         artistToUpdate.shows = updatedArtistShows;
         handleUpdateArtists(artistToUpdate);
         const venueToupdate = venues.find((venue) => venue.id === show.venue_id)
-        const updatedVenueShows = venueToupdate.shows.filter((deletedShow) => deletedShow.id !== show.venue_id)
+        const updatedVenueShows = venueToupdate.shows.filter((deletedShow) => deletedShow.id !== show.id)
         venueToupdate.shows = updatedVenueShows;
         handleUpdateVenues(venueToupdate);
     }
