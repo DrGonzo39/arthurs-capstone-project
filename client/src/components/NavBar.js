@@ -42,6 +42,11 @@ function NavBar() {
             >
                 Artist Profiles 
             </NavLink>
+            <NavLink to="/users"
+                style={linkStyles}
+            >
+                User Community
+            </NavLink>
             </>
         )
     }else{
