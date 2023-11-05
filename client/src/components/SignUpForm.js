@@ -41,35 +41,35 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
+      <label htmlFor="username" id="username_label">Username:</label>
       <input
         type="text"
         id="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="password" id="password_label">Password:</label>
       <input
         type="password"
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <label htmlFor="password_confirmation">Confirm Password:</label>
+      <label htmlFor="password_confirmation" id="confirm_label">Confirm Password:</label>
       <input
         type="password"
         id="password_confirmation"
         value={passwordConfirmation}
         onChange={(e) => setPasswordConfirmation(e.target.value)}
       />
-      <label htmlFor='bio'>What's your deal?</label>
+      <label htmlFor='bio' id="bio_label">What's your deal?</label>
       <input 
       type='text'
       id='bio'
       value={bio}
       onChange={(e) => setBio(e.target.value)}
       />
-      <label htmlFor='type'>Are you a show Goer or a show Promoter?</label>
+      <label htmlFor='type' id="type_label">Are you a show Goer or a show Promoter?</label>
       <input
       type='text'
       id='type'

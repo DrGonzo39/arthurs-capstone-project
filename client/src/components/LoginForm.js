@@ -32,11 +32,13 @@ function LoginForm() {
   
     return (
       <form onSubmit={handleSubmit}>
+        <label id="username_login_label">Username:</label>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        <label id="password_login_label">Password:</label>
         <input
             type="text"
             value={password}

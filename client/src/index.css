@@ -136,6 +136,34 @@ body {
   display: block;
 }
 
+#username_label{
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#password_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#confirm_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#bio_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#type_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#username_login_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#password_login_label {
+  color: rgba(255, 89, 80, 0.651);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -36,6 +36,7 @@ function UserProvider({ children }) {
     function onLogout() {
         setIsLoggedIn(false)
         setUser({})
+        navigate("/login");
     }
 
     return(
