@@ -56,6 +56,7 @@ function VenueCard({ venue }) {
             setTitle("")
             setRating("")
             setDate("")
+            setArtistId(0)
             if(r.ok){
                 r.json().then((newShow) => onAddShow(newShow))
             }else{
@@ -75,18 +76,21 @@ function VenueCard({ venue }) {
             <input 
             type="text"
             id="title"
+            placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             />
              <input 
             type="integer"
             id="rating"
+            placeholder="Rate the hype 1-10"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
             />
              <input 
             type="text"
             id="date"
+            placeholder="When is it? (M/DD)"
             value={date}
             onChange={(e) => setDate(e.target.value)}
             />

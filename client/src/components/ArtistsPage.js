@@ -41,29 +41,33 @@ function ArtistsPage() {
     if (isLoggedIn) {
         return (
             <>
-            <h1>Goers add an artist you've seen, Promoters add an artist for an upcoming show!</h1>
+            <h1 id='artist_page_header'>Goers add an artist you've seen, Promoters add an artist for an upcoming show!</h1>
             <form onSubmit={handleSubmit}>
                 <input 
                 type='text'
                 id='name'
+                placeholder='Artist name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 />
                 <input 
                 type='text'
                 id='genre'
+                placeholder='Genre'
                 value={genre}
                 onChange={(e) => setGenre(e.target.value)}
                 />
                 <input 
                 type='text'
                 id='members'
+                placeholder='Band Members'
                 value={members}
                 onChange={(e) => setMembers(e.target.value)}
                 />
                 <input 
                 type='text'
                 id='image'
+                placeholder='Upload an Image'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
                 />

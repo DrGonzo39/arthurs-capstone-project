@@ -22,7 +22,11 @@ function UsersPage() {
             <>
             <div>
                 {userList.map((user) => (
+                    <div id='user_info'>
                     <h1>{user.username}</h1>
+                    <p>Show {user.type}</p>
+                    <h3>{user.bio}</h3>
+                    </div>
                 ))}
             </div>
             <ul>

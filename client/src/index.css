@@ -7,6 +7,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/upwk62069743-wikimedia-image.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=3856ad4c47916cd8a11228ab15f67caa);
+}
+
+#user_name_text {
+  font-size: 40px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#user_type_text {
+  font-size: 20px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#nav_bar {
+  margin:auto;
+}
+
+#venue_card {
+  width: 60%;
+  margin:auto;
+  background-color: rgb(222, 200, 176);
+  border: 2px lightsalmon; 
+  border-radius: 10px;
+  border-style: dotted;
+  display: block;
+}
+
+#venue_name {
+  text-align: center;
+  font-size: 50px;
+  font-family: Papyrus;
+}
+
+#venue_location {
+  text-align: center;
+  font-size: 25px;
+  font-family: Papyrus;
+}
+
+#venue_image {
+  width: 40%;
+  margin:auto;
+  display: block;
+}
+
+#upcoming_shows {
+  font-size: 25px;
+  font-family: Papyrus;
+}
+
+#artist_page_header {
+  font-size: 50px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+}
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -27,9 +27,9 @@ function NavBar() {
 
     if (isLoggedIn) {
         return (
-            <>
+            <div id="nav_bar">
             <h1 id="user_name_text">{`Hello ${user.username}`}</h1>
-            <h2>{user.type}</h2>
+            <h2 id='user_type_text'>{user.type}</h2>
             <br/>
             <button style={linkStyles} onClick={logout}>Logout</button>
             <NavLink to="/venues"
@@ -47,7 +47,7 @@ function NavBar() {
             >
                 User Community
             </NavLink>
-            </>
+            </div>
         )
     }else{
         return (
