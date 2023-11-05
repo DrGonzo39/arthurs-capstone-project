@@ -45,28 +45,28 @@ function ArtistsPage() {
             <form onSubmit={handleSubmit}>
                 <input 
                 type='text'
-                id='name'
+                id='name_input'
                 placeholder='Artist name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 />
                 <input 
                 type='text'
-                id='genre'
+                id='genre_input'
                 placeholder='Genre'
                 value={genre}
                 onChange={(e) => setGenre(e.target.value)}
                 />
                 <input 
                 type='text'
-                id='members'
+                id='members_input'
                 placeholder='Band Members'
                 value={members}
                 onChange={(e) => setMembers(e.target.value)}
                 />
                 <input 
                 type='text'
-                id='image'
+                id='image_input'
                 placeholder='Upload an Image'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
@@ -87,7 +87,7 @@ function ArtistsPage() {
         )
     }else{
         return (
-            <h1>Please Login or Sign Up</h1>
+            <h1 id='login_prompt_text'>Please Login or Sign Up</h1>
         )
     }
 }

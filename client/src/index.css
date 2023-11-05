@@ -66,7 +66,44 @@ body {
   color: rgba(255, 89, 80, 0.651);
 }
 
+#artist_name {
+  font-size: 40px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
 
+#artist_pic {
+  width: 40%;
+  margin:auto;
+  display: block
+}
+
+#members {
+  font-size: 30px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#genre {
+  font-size: 20px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+}
+
+#user_info {
+  font-size: 40px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
+
+#login_prompt_text {
+  font-size: 40px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

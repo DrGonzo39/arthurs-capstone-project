@@ -23,9 +23,10 @@ function UsersPage() {
             <div>
                 {userList.map((user) => (
                     <div id='user_info'>
-                    <h1>{user.username}</h1>
+                    <h1>UserName - {user.username}</h1>
                     <p>Show {user.type}</p>
                     <h3>{user.bio}</h3>
+                    <br />
                     </div>
                 ))}
             </div>
@@ -38,7 +39,7 @@ function UsersPage() {
         )
     }else{
         return (
-            <h1>Please Login or Sign Up</h1>
+            <h1 id='login_prompt_text'>Please Login or Sign Up</h1>
         )
     }
 }

@@ -95,8 +95,8 @@ function ShowCard({ show }) {
 
     return (
         <div>
-        <h1>{show.title}</h1>
-        <h2>Featuring: {show.artist.name}</h2>
+        <h1 id='show_title'>{show.title}</h1>
+        <h2 id="show_artist">Featuring: {show.artist.name}</h2>
           <form id="show_info" onSubmit={handleSubmit}>
             <p>Date:</p>
             <input 

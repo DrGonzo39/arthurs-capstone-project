@@ -23,7 +23,7 @@ function VenuesPage() {
         )
     }else{
         return (
-            <h1>Please Login or Sign Up</h1>
+            <h1 id='login_prompt_text'>Please Login or Sign Up</h1>
         )
     }
 }
