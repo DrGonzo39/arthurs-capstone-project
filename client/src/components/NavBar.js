@@ -32,6 +32,11 @@ function NavBar() {
             <h2 id='user_type_text'>{user.type}</h2>
             <br/>
             <button style={linkStyles} onClick={logout}>Logout</button>
+            <NavLink to="/home" 
+                style={linkStyles}
+            >
+                Home/Info 
+            </NavLink>
             <NavLink to="/venues"
                 style={linkStyles}
             >

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = React.createContext();
 
 function UserProvider({ children }) {
     const [user, setUser] = useState({})
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const navigate = useNavigate();
     
     useEffect(() => {
         fetch("/me")
@@ -22,11 +24,13 @@ function UserProvider({ children }) {
     function onLogin(user) {
         setIsLoggedIn(true)
         setUser(user)
+        navigate("/home");
     }
 
     function onSignUp(user) {
         setIsLoggedIn(true)
         setUser(user)
+        navigate("/home");
     }
 
     function onLogout() {

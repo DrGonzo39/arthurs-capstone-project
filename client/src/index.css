@@ -105,6 +105,37 @@ body {
   text-align: center;
 }
 
+#home_header {
+  font-size: 40px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
+
+#home_under_header {
+  font-size: 35px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
+
+#home_text {
+  font-size: 30px;
+  font-family: Papyrus;
+  color: rgba(255, 89, 80, 0.651);
+  text-align: center;
+}
+
+#goer_venue_card {
+  width: 60%;
+  margin:auto;
+  background-color: rgb(222, 200, 176);
+  border: 2px lightsalmon; 
+  border-radius: 10px;
+  border-style: dotted;
+  display: block;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -9,6 +9,7 @@ import { ArtistsProvider } from "./contexts/artists";
 import VenuesPage from "./components/VenuesPage";
 import ArtistsPage from "./components/ArtistsPage";
 import UsersPage from "./components/UsersPage";
+import HomePage from "./components/HomePage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route exact path="/signup" element={<SignUpForm/>}/>
         <Route exact path="/login" element={<LoginForm/>}/>
+        <Route exact path="/home" element={<HomePage/>}/>
         <Route exact path="/venues" element={<VenuesPage/>}/>
         <Route exact path="/artists" element={<ArtistsPage/>}/>
         <Route exact path="/users" element={<UsersPage/>}/>
