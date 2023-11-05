@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { ArtistsContext } from '../contexts/artists';
+import { UserContext } from '../contexts/user';
 import ArtistCard from './ArtistCard';
 
 function ArtistsPage() {
     const { artists, onAddArtist } = useContext(ArtistsContext)
+    const { isLoggedIn } = useContext(UserContext);
     const [name, setName] = useState("");
     const [genre, setGenre] = useState("");
     const [members, setMembers] = useState("");
@@ -36,48 +38,54 @@ function ArtistsPage() {
         })
     }
 
-    return (
-        <>
-        <h1>Goers add an artist you've seen, Promoters add an artist for an upcoming show!</h1>
-        <form onSubmit={handleSubmit}>
-            <input 
-            type='text'
-            id='name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            />
-            <input 
-            type='text'
-            id='genre'
-            value={genre}
-            onChange={(e) => setGenre(e.target.value)}
-            />
-            <input 
-            type='text'
-            id='members'
-            value={members}
-            onChange={(e) => setMembers(e.target.value)}
-            />
-            <input 
-            type='text'
-            id='image'
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            />
-            <button id='add_artist_button' type='submit'>Add this Artist to the list</button>
-        </form>
-        <h4>
-        {artists.map((artist) => (
-            <ArtistCard key={artist.id} artist={artist} />
-        ))}
-        </h4>
-        <ul>
-            {errors.map((err) => (
-            <li key={err}>{err}</li>
+    if (isLoggedIn) {
+        return (
+            <>
+            <h1>Goers add an artist you've seen, Promoters add an artist for an upcoming show!</h1>
+            <form onSubmit={handleSubmit}>
+                <input 
+                type='text'
+                id='name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                />
+                <input 
+                type='text'
+                id='genre'
+                value={genre}
+                onChange={(e) => setGenre(e.target.value)}
+                />
+                <input 
+                type='text'
+                id='members'
+                value={members}
+                onChange={(e) => setMembers(e.target.value)}
+                />
+                <input 
+                type='text'
+                id='image'
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                />
+                <button id='add_artist_button' type='submit'>Add this Artist to the list</button>
+            </form>
+            <h4>
+            {artists.map((artist) => (
+                <ArtistCard key={artist.id} artist={artist} />
             ))}
-        </ul> 
-        </>
-    )
+            </h4>
+            <ul>
+                {errors.map((err) => (
+                <li key={err}>{err}</li>
+                ))}
+            </ul> 
+            </>
+        )
+    }else{
+        return (
+            <h1>Please Login or Sign Up</h1>
+        )
+    }
 }
 
 export default ArtistsPage;

@@ -4,6 +4,7 @@ art = User.create(username: "Art", type: "Goer", password: "gobuffalo", bio: "I 
 anne = User.create(username: "Anne", type: "Goer", password: "gardenlove", bio: "Only the bluegrass and folk shows for me, I'm too old for Rap")
 chuck = User.create(username: "Chuck", type: "Promoter", password: "wilhelt", bio: "The dark arts are perferred")
 
+
 boris = Artist.create(name: "Boris", genre: "Sludge Metal", members: "Atsuo, Takeshi, Wata", image: "https://i.pinimg.com/736x/13/1b/ea/131bea5af3b3daed101e35891b4acfcd--guitarist-the-band.jpg")
 melvins = Artist.create(name: "The Melvins", genre: "Metal", members: "Buzz Osbourne, Dale Crover, Steve McDonald", image: "http://juicemagazine.com/home/wp-content/uploads/2015/04/melvinszz.jpg")
 run_the_jewels = Artist.create(name: "Run The Jewels", genre: "Rap", members: "Killer Mike, El-P", image: "https://cloud.mp3waxx.com/wp-content/uploads/2020/08/Run-the-jewels.jpg")

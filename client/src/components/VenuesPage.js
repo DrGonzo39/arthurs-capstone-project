@@ -7,19 +7,25 @@ import GoerVenueCard from './GoerVenueCard';
 
 function VenuesPage() {
     const { venues } = useContext(VenuesContext)
-    const { user } = useContext(UserContext)
+    const { user, isLoggedIn } = useContext(UserContext)
     
-    return (
-        <>
-        {venues.map((venue) => {
-            if (user.type === 'Promoter') {
-              return <VenueCard key={venue.id} venue={venue}/>
-            }else{
-                return <GoerVenueCard key={venue.id} venue={venue}/>
-            }
-        })}
-        </>
-    )
+    if (isLoggedIn) {
+        return (
+            <>
+            {venues.map((venue) => {
+                if (user.type === 'Promoter') {
+                return <VenueCard key={venue.id} venue={venue}/>
+                }else{
+                    return <GoerVenueCard key={venue.id} venue={venue}/>
+                }
+            })}
+            </>
+        )
+    }else{
+        return (
+            <h1>Please Login or Sign Up</h1>
+        )
+    }
 }
 
 export default VenuesPage;

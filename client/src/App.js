@@ -15,9 +15,9 @@ function App() {
   
   return (
     <div className="App">
+    <UserProvider>  
     <ArtistsProvider>  
     <VenuesProvider>
-    <UserProvider>
       <NavBar/>
       <Routes>
         <Route exact path="/signup" element={<SignUpForm/>}/>
@@ -26,9 +26,9 @@ function App() {
         <Route exact path="/artists" element={<ArtistsPage/>}/>
         <Route exact path="/users" element={<UsersPage/>}/>
       </Routes>
-    </UserProvider>
     </VenuesProvider>
     </ArtistsProvider>
+    </UserProvider>  
     </div>
   );
 }
