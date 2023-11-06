@@ -2,14 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: :create 
 
     def create
-        case params[:type]
-
-        when 'Promoter'
-            user = Promoter.create!(user_params)
-
-        when 'Goer'
-            user = Goer.create!(user_params)
-        end
+        user = User.create!(user_params)
         session[:user_id] = user.id
         render json: user, status: :created 
     end

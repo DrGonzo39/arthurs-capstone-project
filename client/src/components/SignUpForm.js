@@ -81,7 +81,7 @@ function SignUpForm() {
       </select>
       <button type="submit">Submit</button>
       <ul>{errors.map((err) => (
-        <li key={err}>{err}</li>
+        <li id="error_text" key={err}>{err}</li>
       ))}</ul>
     </form>
     );
