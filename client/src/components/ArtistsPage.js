@@ -5,7 +5,7 @@ import ArtistCard from './ArtistCard';
 
 function ArtistsPage() {
     const { artists, onAddArtist } = useContext(ArtistsContext)
-    const { isLoggedIn } = useContext(UserContext);
+    const { user, isLoggedIn } = useContext(UserContext);
     const [name, setName] = useState("");
     const [genre, setGenre] = useState("");
     const [members, setMembers] = useState("");
@@ -41,7 +41,7 @@ function ArtistsPage() {
     if (isLoggedIn) {
         return (
             <>
-            <h1 id='artist_page_header'>Goers add an artist you've seen, Promoters add an artist for an upcoming show!</h1>
+            <h1 id='artist_page_header'>{user.type === 'Goer' ? "Goers add an artist you've seen" : "Promoters add an artist for an upcoming show"} </h1>
             <form onSubmit={handleSubmit}>
                 <input 
                 type='text'

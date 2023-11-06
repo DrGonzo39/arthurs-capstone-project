@@ -70,12 +70,15 @@ function SignUpForm() {
       onChange={(e) => setBio(e.target.value)}
       />
       <label htmlFor='type' id="type_label">Are you a show Goer or a show Promoter?</label>
-      <input
-      type='text'
+      <select
       id='type'
       value={type}
       onChange={(e) => setType(e.target.value)} 
-      />
+      >
+        <option>What type of user are you?</option>
+        <option>Goer</option>
+        <option>Promoter</option>
+      </select>
       <button type="submit">Submit</button>
       <ul>{errors.map((err) => (
         <li key={err}>{err}</li>

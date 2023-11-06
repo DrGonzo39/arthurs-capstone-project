@@ -40,7 +40,7 @@ function LoginForm() {
         />
         <label id="password_login_label">Password:</label>
         <input
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
         />

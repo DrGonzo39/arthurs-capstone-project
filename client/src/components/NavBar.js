@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../contexts/user'
 import { NavLink } from 'react-router-dom'
+import HomePage from './HomePage';
 
 const linkStyles = {
     display: "inline-block",
@@ -67,6 +68,7 @@ function NavBar() {
             >
                 Sign up 
             </NavLink>
+            <HomePage />
             </>
         )
     }
