@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { UserProvider } from "./contexts/user";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
@@ -13,6 +13,11 @@ import HomePage from "./components/HomePage";
 
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/home")
+  }, [])
   
   return (
     <div className="App">

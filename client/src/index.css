@@ -137,30 +137,51 @@ body {
 }
 
 #username_label{
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
 #password_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
 #confirm_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
 #bio_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
+  display: block;
+}
+
+#bio {
+  width: 400px;
+  height: 250px;
+  display: block;
 }
 
 #type_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
 #username_login_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
 #password_login_label {
+  font-size: 50px;
+  font-family: Papyrus;
   color: rgba(255, 89, 80, 0.651);
 }
 
