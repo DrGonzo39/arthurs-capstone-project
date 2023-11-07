@@ -20,9 +20,9 @@ function LoginForm() {
           password: password
          }),
       }).then((r) => {
-        setUsername("")
-        setPassword("") 
         if (r.ok) {
+          setUsername("")
+          setPassword("")
           r.json().then((user) => onLogin(user));
         } else {
           r.json().then((err) => setErrors(err.errors));

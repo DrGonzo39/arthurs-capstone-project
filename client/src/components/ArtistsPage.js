@@ -26,11 +26,11 @@ function ArtistsPage() {
             image: image
            }),  
         }).then((r) => {
-            setName("")
-            setGenre("")
-            setMembers("")
-            setImage("")
             if(r.ok){
+                setName("")
+                setGenre("")
+                setMembers("")
+                setImage("")
                 r.json().then((newArtist) => onAddArtist(newArtist))
             }else{
                 r.json().then((err) => setErrors(err.errors))

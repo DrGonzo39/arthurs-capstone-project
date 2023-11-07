@@ -5,6 +5,7 @@ import { ArtistsContext } from "../contexts/artists";
 function ShowCard({ show }) {
     const [rating, setRating] = useState(show.rating)
     const [date, setDate] = useState(show.date)
+    const [showEditForm, setShowEditForm] = useState(true)
     const [errors, setErrors] = useState([])
     const { venues, setVenues } = useContext(VenuesContext);
     const { artists, setArtists } = useContext(ArtistsContext);
@@ -23,6 +24,7 @@ function ShowCard({ show }) {
             }),
         }).then((r) => {
             if(r.ok) {
+                setShowEditForm(!showEditForm)
                 r.json().then((updatedShow) => onUpdateShow(updatedShow))
             }else{
                 r.json().then((err) => setErrors(err.errors))
@@ -93,35 +95,52 @@ function ShowCard({ show }) {
         setVenues(updatedVenuesArray);
     }
 
-    return (
-        <div>
-        <h1 id='show_title'>{show.title}</h1>
-        <h2 id="show_artist">Featuring: {show.artist.name}</h2>
-          <form id="show_info" onSubmit={handleSubmit}>
-            <p>Date:</p>
-            <input 
-            type="text"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            />
-            <p>Rating:</p>
-            <input 
-            type="text"
-            id="rating"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            />
-            <button type="submit">Edit this show</button>
-          </form>
-          <button onClick={handleDeleteClick}>Cancel This Show</button>
-          <ul>
-             {errors.map((err) => (
-             <li key={err}>{err}</li>
-             ))}
-            </ul>  
-        </div>
-    )
+    {/* state variable showEdit, set intially to false */}
+        {/* if/then statement wrapping text if false and form if true */}
+        {/* button in text version that toggles state onClick, shows edit forms */}
+        {/* call setter in handleSubmit to revert back to text after edit */}
+
+    if (showEditForm) {
+        return (
+            <div>
+                <h1 id='show_title'>{show.title}</h1>
+                <h2 id="show_artist">Featuring: {show.artist.name}</h2>
+                <h3>Date: {date}</h3>
+                <p>Rating: {rating}</p>
+                <button onClick={() => setShowEditForm(!showEditForm)}>Edit Show Info</button>
+            </div>
+        )
+    }else{
+        return (
+            <div>
+            <h1 id='show_title'>{show.title}</h1>
+            <h2 id="show_artist">Featuring: {show.artist.name}</h2>
+            <form id="show_info" onSubmit={handleSubmit}>
+                <p>Date MM/DD/YY:</p>
+                <input 
+                type="text"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                />
+                <p>Rating:</p>
+                <input 
+                type="text"
+                id="rating"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+                />
+                <button type="submit">Edit this show</button>
+            </form>
+            <button onClick={handleDeleteClick}>Cancel This Show</button>
+            <ul>
+                {errors.map((err) => (
+                <li key={err}>{err}</li>
+                ))}
+                </ul>  
+            </div>
+        )
+    }
 }
 
 export default ShowCard;

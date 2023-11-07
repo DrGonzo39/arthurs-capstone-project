@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { VenuesContext } from "../contexts/venues"
 import { ArtistsContext } from "../contexts/artists";
 import ShowCard from "./ShowCard";
@@ -12,6 +13,7 @@ function VenueCard({ venue }) {
     const [errors, setErrors] = useState([])
     const { venues, setVenues } = useContext(VenuesContext);
     const { artists, setArtists } = useContext(ArtistsContext);
+    const navigate = useNavigate();
    
 
     function onAddShow(newShow) {
@@ -53,11 +55,11 @@ function VenueCard({ venue }) {
             date: date 
            }),  
         }).then((r) => {
-            setTitle("")
-            setRating("")
-            setDate("")
-            setArtistId(0)
             if(r.ok){
+                setTitle("")
+                setRating("")
+                setDate("")
+                setArtistId(0)
                 r.json().then((newShow) => onAddShow(newShow))
             }else{
                 r.json().then((err) => setErrors(err.errors))
@@ -72,6 +74,7 @@ function VenueCard({ venue }) {
             <h1 id="venue_name">{venue.name}</h1>
             <h2 id="venue_location">{venue.location}</h2>
             <h3 id="upcoming_shows">Coming Soon at this Venue!</h3>
+            <button onClick={() => navigate("/artists")}>Don't forget to add your featured Artist if they're not on the list</button>
             <form onSubmit={handleSubmit}>
             <input 
             type="text"

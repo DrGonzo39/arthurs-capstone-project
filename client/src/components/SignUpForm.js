@@ -26,12 +26,12 @@ function SignUpForm() {
         type: type 
       }),
     }).then((r) => {
-      setUsername("")
-      setPassword("")
-      setPasswordConfirmation("")
-      setBio("")
-      setType("")
         if (r.ok) {
+          setUsername("")
+          setPassword("")
+          setPasswordConfirmation("")
+          setBio("")
+          setType("")
           r.json().then((user) => onSignUp(user));
         } else {
           r.json().then((err) => setErrors(err.errors));
