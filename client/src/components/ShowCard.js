@@ -95,10 +95,6 @@ function ShowCard({ show }) {
         setVenues(updatedVenuesArray);
     }
 
-    {/* state variable showEdit, set intially to false */}
-        {/* if/then statement wrapping text if false and form if true */}
-        {/* button in text version that toggles state onClick, shows edit forms */}
-        {/* call setter in handleSubmit to revert back to text after edit */}
 
     if (showEditForm) {
         return (

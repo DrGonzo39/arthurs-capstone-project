@@ -73,16 +73,16 @@ function ArtistsPage() {
                 />
                 <button id='add_artist_button' type='submit'>Add this Artist to the list</button>
             </form>
+            <ul>
+                {errors.map((err) => (
+                <li id="error_text" key={err}>{err}</li>
+                ))}
+            </ul> 
             <h4>
             {artists.map((artist) => (
                 <ArtistCard key={artist.id} artist={artist} />
             ))}
             </h4>
-            <ul>
-                {errors.map((err) => (
-                <li key={err}>{err}</li>
-                ))}
-            </ul> 
             </>
         )
     }else{
