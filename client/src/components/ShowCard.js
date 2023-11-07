@@ -109,9 +109,9 @@ function ShowCard({ show }) {
             <h1 id='show_title'>{show.title}</h1>
             <h2 id="show_artist">Featuring: {show.artist.name}</h2>
             <form id="show_info" onSubmit={handleSubmit}>
-                <p>Date MM/DD/YY:</p>
+                <p>Date:</p>
                 <input 
-                type="text"
+                type="date"
                 id="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
