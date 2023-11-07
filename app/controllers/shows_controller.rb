@@ -27,6 +27,6 @@ class ShowsController < ApplicationController
     private
 
     def show_params
-        params.permit(:title, :rating, :date, :artist_id, :venue_id)
+        params.permit(:title, :date, :artist_id, :venue_id)
     end
 end

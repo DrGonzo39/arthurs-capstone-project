@@ -20,13 +20,13 @@ the_palace = Venue.create(name: "Palace Theatre", location: "1564 Broadway", ima
 the_egg = Venue.create(name: "The Egg", location: "Empire State Plaza", image:"http://www.rogerhodgson.com/documents/theegg2.jpg")
 upstate_concert_hall = Venue.create(name: "Upstate Concert Hall", location: "1208 Route 146", image:"https://i.ytimg.com/vi/YZoRLQNzGHk/maxresdefault.jpg")
 
-show_1 = Show.create(title: "Twins of Evil", rating: 4, date: "9/30", artist_id: melvins.id, venue_id: empire_live.id)
-show_2 = Show.create(title:"Beasts of the East", rating: 5, date: "9/31", artist_id: boris.id, venue_id: empire_live.id)
-show_3 = Show.create(title: "British Invasion", rating: 8, date: "4/25", artist_id: arctic_monkeys.id, venue_id: the_egg.id)
-show_4 = Show.create(title: "DR live", rating: 6, date: "3/18", artist_id: das_racist.id, venue_id: upstate_concert_hall.id)
-show_5 = Show.create(title: "Prog Heaven", rating: 9, date: "5/5", artist_id: elder.id, venue_id: the_palace.id)
-show_6 = Show.create(title: "Dreamers", rating: 7, date: "11/1", artist_id: beach_house.id, venue_id: proctors.id)
-show_7 = Show.create(title: "Fear Inoculum Tour", rating: 10, date: "2/12", artist_id: tool.id, venue_id: the_egg.id)
-show_8 = Show.create(title: "RTJ4 WorldWide", rating: 8, date: "10/18", artist_id: run_the_jewels.id, venue_id: the_palace.id)
+show_1 = Show.create(title: "Twins of Evil", date: "9/30", artist_id: melvins.id, venue_id: empire_live.id)
+show_2 = Show.create(title:"Beasts of the East", date: "9/31", artist_id: boris.id, venue_id: empire_live.id)
+show_3 = Show.create(title: "British Invasion", date: "4/25", artist_id: arctic_monkeys.id, venue_id: the_egg.id)
+show_4 = Show.create(title: "DR live", date: "3/18", artist_id: das_racist.id, venue_id: upstate_concert_hall.id)
+show_5 = Show.create(title: "Prog Heaven", date: "5/5", artist_id: elder.id, venue_id: the_palace.id)
+show_6 = Show.create(title: "Dreamers", date: "11/1", artist_id: beach_house.id, venue_id: proctors.id)
+show_7 = Show.create(title: "Fear Inoculum Tour", date: "2/12", artist_id: tool.id, venue_id: the_egg.id)
+show_8 = Show.create(title: "RTJ4 WorldWide", date: "10/18", artist_id: run_the_jewels.id, venue_id: the_palace.id)
 
 puts "Doneski!!!"

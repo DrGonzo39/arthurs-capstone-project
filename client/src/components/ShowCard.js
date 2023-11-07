@@ -3,7 +3,6 @@ import { VenuesContext } from "../contexts/venues"
 import { ArtistsContext } from "../contexts/artists";
 
 function ShowCard({ show }) {
-    const [rating, setRating] = useState(show.rating)
     const [date, setDate] = useState(show.date)
     const [showEditForm, setShowEditForm] = useState(true)
     const [errors, setErrors] = useState([])
@@ -19,8 +18,7 @@ function ShowCard({ show }) {
             },
             body: JSON.stringify({
                 venue_id: show.venue.id,
-                date: date,
-                rating: rating, 
+                date: date 
             }),
         }).then((r) => {
             if(r.ok) {
@@ -102,7 +100,6 @@ function ShowCard({ show }) {
                 <h1 id='show_title'>{show.title}</h1>
                 <h2 id="show_artist">Featuring: {show.artist.name}</h2>
                 <h3>Date: {date}</h3>
-                <p>Rating: {rating}</p>
                 <button onClick={() => setShowEditForm(!showEditForm)}>Edit Show Info</button>
             </div>
         )
@@ -118,13 +115,6 @@ function ShowCard({ show }) {
                 id="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                />
-                <p>Rating:</p>
-                <input 
-                type="text"
-                id="rating"
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
                 />
                 <button type="submit">Edit this show</button>
             </form>

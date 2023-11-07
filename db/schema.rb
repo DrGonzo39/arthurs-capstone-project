@@ -24,8 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_012216) do
     t.integer "artist_id", null: false
     t.integer "venue_id", null: false
     t.string "title"
-    t.integer "rating"
-    t.string "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_shows_on_artist_id"

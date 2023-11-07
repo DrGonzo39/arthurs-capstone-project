@@ -7,7 +7,6 @@ import ShowCard from "./ShowCard";
 
 function VenueCard({ venue }) {
     const [title, setTitle] = useState("")
-    const [rating, setRating] = useState(0)
     const [date, setDate] = useState("")
     const [artistId, setArtistId] = useState(0)
     const [errors, setErrors] = useState([])
@@ -51,13 +50,11 @@ function VenueCard({ venue }) {
             artist_id: artistId,
             venue_id: venue.id,
             title: title,
-            rating: rating,
             date: date 
            }),  
         }).then((r) => {
             if(r.ok){
                 setTitle("")
-                setRating("")
                 setDate("")
                 setArtistId(0)
                 r.json().then((newShow) => onAddShow(newShow))
@@ -84,14 +81,7 @@ function VenueCard({ venue }) {
             onChange={(e) => setTitle(e.target.value)}
             />
              <input 
-            type="integer"
-            id="rating"
-            placeholder="Rate the hype 1-10"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            />
-             <input 
-            type="text"
+            type="date"
             id="date"
             placeholder="When is it? (M/DD)"
             value={date}
@@ -100,7 +90,7 @@ function VenueCard({ venue }) {
             <select onChange={(e) => setArtistId(e.target.value)} name="artists" id="artists_select">
                 <option>Choose an artist</option>
                 {artists.map((artist) => (
-                    <option value={artist.id}>{artist.name}</option>
+                    <option key={artist.id} value={artist.id}>{artist.name}</option>
                 ))}
             </select>
             <button id="new_show_button" type="submit">Add your show!</button>
