@@ -92,14 +92,15 @@ function ShowCard({ show }) {
         })
         setVenues(updatedVenuesArray);
     }
-
+    const displayDate = new Date(date).toString();
+    const dateToDisplay = displayDate.slice(0, 15);
 
     if (showEditForm) {
         return (
             <div>
                 <h1 id='show_title'>{show.title}</h1>
                 <h2 id="show_artist">Featuring: {show.artist.name}</h2>
-                <h3>Date: {date}</h3>
+                <h3>Date: {dateToDisplay}</h3>
                 <button onClick={() => setShowEditForm(!showEditForm)}>Edit Show Info</button>
             </div>
         )
