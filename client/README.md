@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+#Welcome to my concert forum site!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Getting started
+    To clone the repo on to your machine and take a look, copy it from the GitHub page and run 'git clone' then right click and the link will appear in your terminal. 
+    The app uses Ruby version 2.7.4
 
-## Available Scripts
+#Dependencies
+    Once you've downloaded it, navigate to the files directory and run 'bundle install' to get all the dependencies on there from the Gemfile
+    The app will not run without these, ActiveRecord and Rails are essential. With gems like puma for the server and active model serializers needed as well. 
 
-In the project directory, you can run:
+#Database highlights
+    The most important aspect of this app is that in the database, you'll see that there are two different tables 'promoter' and 'goer' that inherit their attributes from the 'user' table. This is because the React frontend has two uniquely different kinds of users. Those that go to concerts and those that promote them. More detail in the React section. There is also a many-to-many relation ship between the artist and venue tables, which are joined by shows. Data from those tables are what the users interact with. 
+    If you want to look at the data in console, run 'rails c' to open that up and look. 
+    If you want to add more seed data, add it then run 'rails db:seed:replant' to fix it. Just bear in mind this will delete anything you've added through the website! 
 
-### `npm start`
+#Running the App
+    The entire thing is pre-configured to run with a Rails backend and a Reactjs front, so you wont need to do anything to set that up.
+    However, you want to get the rails server running first, to do that simply run 'rails s' in your terminal and the server will start up.
+    Next, to get the React app running, which is all located in the 'client' folder, run the command 'npm start --prefix client' to boot up the react app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#React frontend
+    You'll be taken to the homepage right when the app boots up, where you can login or create a new user.
+    One thing of note, this app uses react-router-dom v6, not v5 which most are used to, so there may be some features that look foreign, check the React docs if there is any confusion. 
+    There will be 5 routes at the top, that take you to each info page on the site, which are unique to each aspect of the Albany concert scene
+    Biggest thing to note, throughout the app you'll see conditional rendering based on whether the users type is 'Promoter' or 'Goer'
+    Only concert promoters have access to the shows CRUD actions on VenuePage, and the header on top of Artists is different for each also. 
+    So, if you want to be doing actions on shows, you'll have to sign in as, or create a user.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#Conclusion
+    Other than that, enjoy adding to or taking in the many different concert experiences Albany has going on!
